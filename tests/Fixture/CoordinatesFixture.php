@@ -6,9 +6,9 @@ namespace Locatable\Test\Fixture;
 use Cake\TestSuite\Fixture\TestFixture;
 
 /**
- * GpsFixture
+ * CoordinatesFixture
  */
-class GpsFixture extends TestFixture
+class CoordinatesFixture extends TestFixture
 {
     /**
      * Fields

@@ -4,19 +4,19 @@ declare(strict_types=1);
 namespace Locatable\Test\TestCase\Model\Table;
 
 use Cake\TestSuite\TestCase;
-use Locatable\Model\Table\GpsTable;
+use Locatable\Model\Table\CoordinatesTable;
 
 /**
- * Locatable\Model\Table\GpsTable Test Case
+ * Locatable\Model\Table\CoordinatesTable Test Case
  */
-class GpsTableTest extends TestCase
+class CoordinatesTableTest extends TestCase
 {
     /**
      * Test subject
      *
-     * @var \Locatable\Model\Table\GpsTable
+     * @var \Locatable\Model\Table\CoordinatesTable
      */
-    protected $Gps;
+    protected $Coordinates;
 
     /**
      * Fixtures
@@ -24,7 +24,7 @@ class GpsTableTest extends TestCase
      * @var array
      */
     protected $fixtures = [
-        'app.Gps',
+        'app.Coordinates',
     ];
 
     /**
@@ -35,8 +35,8 @@ class GpsTableTest extends TestCase
     public function setUp(): void
     {
         parent::setUp();
-        $config = $this->getTableLocator()->exists('Gps') ? [] : ['className' => GpsTable::class];
-        $this->Gps = $this->getTableLocator()->get('Gps', $config);
+        $config = $this->getTableLocator()->exists('Coordinates') ? [] : ['className' => CoordinatesTable::class];
+        $this->Coordinates = $this->getTableLocator()->get('Coordinates', $config);
     }
 
     /**
@@ -46,7 +46,7 @@ class GpsTableTest extends TestCase
      */
     public function tearDown(): void
     {
-        unset($this->Gps);
+        unset($this->Coordinates);
 
         parent::tearDown();
     }

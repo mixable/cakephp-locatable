@@ -11,7 +11,7 @@ use Cake\ORM\Query;
  *
  * @package App\Model\Behavior
  * @author Mathias Lipowski
- * @property \Locatable\Model\Table\GpsTable $Gps
+ * @property \Locatable\Model\Table\CoordinatesTable $Coordinates
  */
 class LocatableBehavior extends Behavior
 {
@@ -22,7 +22,7 @@ class LocatableBehavior extends Behavior
      */
     protected $_defaultConfig = [
         'modelClass' => null,
-        'locatableClass' => 'Gps',
+        'locatableClass' => 'Coordinates',
         'foreignKey' => 'foreign_key',
         'modelKey' => 'model',
     ];
@@ -39,33 +39,16 @@ class LocatableBehavior extends Behavior
             $this->setConfig('modelClass', $this->_table->getAlias());
         }
 
-        $this->_table->hasOne('Gps')
+        $this->_table->hasOne('Coordinates')
             ->setClassName($this->getConfig('locatableClass'))
-//            ->setEntityClass('Gps')
             ->setForeignKey($this->getConfig('foreignKey'))
             ->setConditions([
                 $this->getConfig('locatableClass') . '.' . $this->getConfig('modelKey') => $this->_table->getAlias(),
             ])
             ->setDependent(true);
 
-        $this->_table->Gps->belongsTo($this->getConfig('modelClass'))
+        $this->_table->Coordinates->belongsTo($this->getConfig('modelClass'))
             ->setClassName($this->getConfig('modelClass'))
             ->setForeignKey($this->getConfig('foreignKey'));
-    }
-
-    /**
-     * Create the finder comments
-     *
-     * @param \Cake\ORM\Query $query the current Query
-     * @param array $options Options
-     * @return \Cake\ORM\Query
-     */
-    public function findComments(Query $query, $options = [])
-    {
-        return $query->contain([
-            'Comments' => function (Query $q) {
-                return $q->find('threaded')->contain('Users')->order(['Comments.created' => 'ASC']);
-            },
-        ]);
     }
 }

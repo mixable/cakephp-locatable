@@ -1,12 +1,16 @@
 {
   "name": "mixable/cakephp-locatable",
-  "description": "CakePHP behavior to add GPS location data to any table.",
+  "description": "CakePHP behavior to add position coordinates (latitude, longitude) to any table.",
   "type": "cakephp-plugin",
   "homepage": "http://github.com/mixable/cakephp-locatable",
   "license": "MIT",
   "require": {
     "php": ">=7.4",
     "cakephp/cakephp": "^4.0.0"
+  },
+  "require-dev": {
+    "robmorgan/phinx": "^0.12",
+    "cakephp/migrations": "^3.0.0"
   },
   "autoload": {
     "psr-4": {
@@ -18,5 +22,6 @@
       "Locatable\\Test\\": "tests",
       "Cake\\Test\\": "./vendor/cakephp/cakephp/tests"
     }
-  }
+  },
+  "prefer-stable": true
 }

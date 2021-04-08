@@ -6,7 +6,7 @@ namespace Locatable\Model\Entity;
 use Cake\ORM\Entity;
 
 /**
- * Class Gps
+ * Class Coordinate
  *
  * @package Locatable\Model\Entity
  * @author Mathias Lipowski
@@ -18,7 +18,7 @@ use Cake\ORM\Entity;
  * @property \Cake\I18n\FrozenTime|null $created
  * @property \Cake\I18n\FrozenTime|null $modified
  */
-class Gps extends Entity
+class Coordinate extends Entity
 {
     /**
      * Fields that can be mass assigned using newEntity() or patchEntity().
