@@ -2,8 +2,6 @@
 
 ## Installation
 You can install this plugin into your CakePHP application using [composer](http://getcomposer.org).
-
-## Scratch installation example (with CakePHP)
 ```
 composer require mixable/cakephp-locatable
 ```
