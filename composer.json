@@ -2,6 +2,7 @@
   "name": "mixable/cakephp-locatable",
   "description": "CakePHP behavior to add GPS location data to any table.",
   "type": "cakephp-plugin",
+  "homepage": "http://github.com/mixable/cakephp-locatable",
   "license": "MIT",
   "require": {
     "php": ">=7.4",
@@ -9,12 +10,12 @@
   },
   "autoload": {
     "psr-4": {
-      "Mixable\\Locatable\\": "src"
+      "Locatable\\": "src"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "Mixable\\Locatable\\Test\\": "tests",
+      "Locatable\\Test\\": "tests",
       "Cake\\Test\\": "./vendor/cakephp/cakephp/tests"
     }
   }
