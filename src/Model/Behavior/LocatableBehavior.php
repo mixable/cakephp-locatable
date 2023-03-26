@@ -43,7 +43,7 @@ class LocatableBehavior extends Behavior
     public function initialize(array $config): void
     {
         if (empty($this->getConfig('modelClass'))) {
-            $this->setConfig('modelClass', $this->getTable()->getAlias());
+            $this->setConfig('modelClass', $this->table()->getAlias());
         }
 
         $this->_table->hasOne('Coordinates')
